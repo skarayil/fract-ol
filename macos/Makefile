@@ -8,8 +8,8 @@ BONUS_SRC_DIR = bonus/sources
 BONUS_OBJ_DIR = obj_bonus
 INC_DIR = include
 BONUS_INC_DIR = bonus/include
-MLX_DIR = minilibx-linux
 
+MLX_DIR = minilibx-opengl
 MLX_LIB = $(MLX_DIR)/libmlx.a
 
 SRCS = sources/atod.c \
@@ -30,7 +30,7 @@ BONUS_SRCS = bonus/sources/main_bonus.c \
 			 bonus/sources/parser_bonus.c \
 			 bonus/sources/render_bonus.c \
 			 bonus/sources/zoom_bonus.c
-			 
+
 BONUS_OBJS = $(BONUS_SRCS:$(BONUS_SRC_DIR)/%.c=$(BONUS_OBJ_DIR)/%.o)
 
 BONUS_NAME = fractol_bonus
@@ -40,7 +40,7 @@ CFLAGS = -Wall -Wextra -Werror $(INCLUDES)
 BONUS_INCLUDES = -I$(BONUS_INC_DIR) -I$(INC_DIR) -I$(MLX_DIR)
 BONUS_CFLAGS = -Wall -Wextra -Werror $(BONUS_INCLUDES)
 
-LDFLAGS = -L$(MLX_DIR) -lmlx -lXext -lX11 -lm
+LDFLAGS = -L$(MLX_DIR) -lmlx -framework OpenGL -framework AppKit
 
 all: $(NAME)
 
@@ -48,14 +48,13 @@ $(NAME): $(MLX_LIB) $(OBJS)
 	@$(CC) $(OBJS) $(LDFLAGS) -o $(NAME)
 
 $(MLX_LIB):
-	@$(MAKE) -C $(MLX_DIR) >/dev/null 2>&1
+	@$(MAKE) -s -C $(MLX_DIR) >/dev/null 2>&1
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
-
 
 bonus: $(MLX_LIB) $(BONUS_OBJ_DIR) $(BONUS_OBJS)
 	@$(CC) $(BONUS_OBJS) $(LDFLAGS) -o $(BONUS_NAME)

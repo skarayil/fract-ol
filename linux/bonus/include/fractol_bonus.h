@@ -6,7 +6,7 @@
 /*   By: skarayil <skarayil@student.42kocaeli>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 12:20:51 by skarayil          #+#    #+#             */
-/*   Updated: 2025/11/15 03:29:57 by skarayil         ###   ########.fr       */
+/*   Updated: 2025/11/16 15:41:27 by skarayil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # define WIN_W 800
 # define WIN_H 600
-# define ITER 1000
+# define ITER 100
 
 # include <stdbool.h>
 

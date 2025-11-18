@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   fractol_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skarayil <skarayil@student.42kocaeli>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/06 12:17:46 by skarayil          #+#    #+#             */
-/*   Updated: 2025/11/16 15:41:23 by skarayil         ###   ########.fr       */
+/*   Created: 2025/11/06 12:20:51 by skarayil          #+#    #+#             */
+/*   Updated: 2025/11/16 15:41:45 by skarayil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#ifndef FRACTOL_BONUS_H
+# define FRACTOL_BONUS_H
 
 # define WIN_W 800
 # define WIN_H 600
 # define ITER 100
+# define KEY_ESC     53
+# define KEY_LEFT    123
+# define KEY_RIGHT   124
+# define KEY_DOWN    125
+# define KEY_UP      126
+# define KEY_C       8
+# define KEY_C_CAP   8
+# define MOUSE_UP    4
+# define MOUSE_DOWN  5
 
 # include <stdbool.h>
 
@@ -27,14 +36,14 @@ typedef struct s_complex
 
 typedef enum e_fractal_type
 {
-	MANDELBROT,
-	JULIA,
+	TRICORN,
+	CELTIC,
 }					t_fractal_type;
 
 typedef union u_fractal_data
 {
-	t_complex		mandelbrot;
-	t_complex		julia;
+	t_complex		celtic;
+	t_complex		tricorn;
 }					t_fractal_data;
 
 typedef struct s_image
@@ -74,10 +83,8 @@ typedef struct s_env
 	t_zoom			zoom;
 }					t_env;
 
-double				ft_julia(t_complex z, t_complex c, int iter);
-double				ft_mandelbrot(t_complex c, int iter);
+double				ft_bonus(t_env *f, t_complex c, int iter);
 bool				ft_parser(int ac, char *av[], t_env *f);
-bool				ft_atod(const char *str, double *result);
 void				ft_render(t_env *f);
 void				ft_init_image(t_env *f);
 void				ft_destroy_image(t_env *f);
@@ -85,5 +92,7 @@ void				ft_zoom(t_env *f, double x, double y, int dir);
 int					ft_on_close(t_env *f);
 void				ft_setup_hooks(t_env *f);
 int					ft_color(double i, int iter, int tint);
+int					ft_on_close(t_env *f);
+void				ft_setup_hooks(t_env *f);
 
 #endif

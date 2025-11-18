@@ -6,7 +6,7 @@
 /*   By: skarayil <skarayil@student.42kocaeli>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 12:17:46 by skarayil          #+#    #+#             */
-/*   Updated: 2025/11/16 15:41:23 by skarayil         ###   ########.fr       */
+/*   Updated: 2025/11/16 15:41:55 by skarayil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,15 @@
 # define WIN_W 800
 # define WIN_H 600
 # define ITER 100
+# define KEY_ESC     53
+# define KEY_LEFT    123
+# define KEY_RIGHT   124
+# define KEY_DOWN    125
+# define KEY_UP      126
+# define KEY_C       8
+# define KEY_C_CAP   8
+# define MOUSE_UP    4
+# define MOUSE_DOWN  5
 
 # include <stdbool.h>
 
