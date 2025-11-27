@@ -1,4 +1,4 @@
-# 🌀 Fract-ol - Fraktal Görselleştirme Programı
+# 🌀 [Fract-ol](https://skarayil.github.io/fract-ol/fract-ol.html) - Fraktal Görselleştirme Programı
 
 <div align="center">
 
@@ -10,6 +10,7 @@
 **MiniLibX grafik kütüphanesi kullanarak matematiksel fraktalların görselleştirilmesi**
 
 *Bu proje, karmaşık sayılar, matematiksel iterasyonlar ve grafik programlama ile fraktal geometrisinin büyüleyici dünyasını keşfetme fırsatı sunar.*
+*Web tabanlı, interaktif fractol uygulaması için: [fract-ol](https://skarayil.github.io/fract-ol/fract-ol.html)*
 
 [Kurulum](#-kurulum) • [Kullanım](#-kullanım) • [Özellikler](#-desteklenen-özellikler) • [Bonus](#-bonus-kısmı)
 
